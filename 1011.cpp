@@ -3,29 +3,27 @@ using namespace std;
 
 int AlpaCentauri(int distance) {
 
-	if (distance == 0)
-		return 0;
-	else if (distance == 1)
+	if (distance == 1)
 		return 1;
 	else if (distance == 2)
 		return 2;
-	
-	int res = 2;
-	int cnt = 3;
-	int jp = 2;
+
+	int i = 2;	//i
+	int cnt = 0;	//cnt
+	int j = 2;		//j
+
 
 	while (1) {
-		if (distance < cnt)
+		if (cnt == 2) {
+			i++;
+			cnt = 0;
+		}
+		j += i;
+		cnt++;
+		if (j >= distance)
 			break;
-		res++;
-		cnt += jp;
-		if (distance < cnt)
-			break;
-		res++;
-		cnt += jp;
-		jp++;
 	}
-	return res;
+	return (cnt == 1) ? i * 2 - 1 : i * 2;
 }
 
 int main() {
