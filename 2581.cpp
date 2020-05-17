@@ -3,28 +3,31 @@ using namespace std;
 
 int main() {
 	int m, n;
-	int num[10000];
 	int sum = 0;
-	int temp = 0;
 	int min = -1;
+	int temp = 0;
 
 	cin >> m >> n;
 
 	for (int i = m; i <= n; i++) {
 
-		for (int j = 1; j <= num[i]; j++) {
-			if (num[i] % j == 0)
+		for (int j = 1; j <= i; j++) {
+			if (i % j == 0)
 				temp++;
 		}
 
 		if (temp == 2) {
-			sum += num[i];
+			sum += i;
+			if (min == -1) {
+				min = i;
+			}
 		}
 
-		if (min == -1) {
-			min = num[i];
-		}
 		temp = 0;
 	}
-	cout << sum << endl << min << endl;
+
+	if (min == -1)
+		cout << "-1" << endl;
+	else
+		cout << sum << endl << min << endl;
 }
