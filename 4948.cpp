@@ -1,29 +1,47 @@
 #include <iostream>
+#include <cmath>
+#include <cstdio>
 using namespace std;
 
 int main() {
-	int n;
+	int n = 1;
 	int cnt = 0;
-	int temp = 0;
-
-	cin >> n;
 
 	while (n != 0) {
-		for (int j = n + 1; j <= 2 * n; j++) {
-			for (int k = 1; k <= j; k++) {
-				if (j % k == 0)
-					temp++;
-			}
+		cin >> n;
 
-			if (temp == 2)
-				cnt++;
-			temp = 0;
+		if (n == 0)
+			break;
+
+		//에라토스테네스의 체 사용
+		bool * arr = new bool[2 * n + 1];
+
+		for (int i = 0; i < 2 * n + 1; i++) {
+			arr[i] = true;
 		}
 
+		int j;
+
+		for (int i = 2; i < 2 * n + 1; i++) {
+			if (arr[i]) {
+				if ((unsigned int)pow(i, 2) > 1000001) {
+					break;
+				}
+				else {
+					for (j = (int)pow(i, 2); j < 2 * n + 1;) {
+						arr[j] = false;
+						j += i;
+					}
+				}
+			}
+		}
+
+		for (int i = n + 1; i < 2 * n + 1; i++) {
+			if (arr[i] && i >= n)
+				cnt++;
+		}
 		cout << cnt << endl;
 		cnt = 0;
-
-		cin >> n;
+		delete[]arr;
 	}
-
 }
