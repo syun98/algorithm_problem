@@ -9,5 +9,6 @@ int main() {
 	cout << fixed;
 	cout.precision(6);
 
-	cout << r * r*PI << endl << r * r * 2 << endl;
+	cout << r * r*PI << endl;
+	cout << r * r * 2 << endl;
 }
