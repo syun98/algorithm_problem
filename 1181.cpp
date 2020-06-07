@@ -24,6 +24,6 @@ int main(void) {
 	sort(vec.begin(), vec.end(), compareStr);
 
 	for (int i = 0; i < vec.size(); i++) {
-		cout << vec[i] << endl;
+		cout << vec[i] << '\n';
 	}
 }
