@@ -31,11 +31,11 @@ again:;
 		for (int j = 0; j < 9; j++) {
 			if (arr[i][j] == 0)
 				if (sdoku(i, j))
-					cnt--;
+					res_cnt--;
 				else
 					;
 			else
-				cnt--;
+				res_cnt--;
 		}
 	}
 
