@@ -1,22 +1,32 @@
 #include <iostream>
 using namespace std;
 
-int a[9][9] = {};
+int arr[9][9] = {};
 
-void sdoku(int i, int j) {
-	int res = 45;
+void sdoku(int i,int j) {
+	int used[9] = { 0, };
+	int cnt_i = 0, cnt_j = 0;
+
+	for (int k; k < 9; k++) {
+		if (arr[i][k]) {
+			cnt_i++;
+			used[arr[i][k]]++;
+		}
+		if (arr[k][j])
+			cnt_j++;
+	}
 }
 
 int main(void) {
 	for (int i = 0; i < 9; i++) {
 		for (int j = 0; j < 9; j++) {
-			cin >> a[i][j];
+			cin >> arr[i][j];
 		}
 	}
 
 	for (int i = 0; i < 9; i++) {
 		for (int j = 0; j < 9; j++) {
-			if (a[i][j] == 0)
+			if (arr[i][j] == 0)
 				sdoku(i, j);
 		}
 	}
@@ -24,7 +34,7 @@ int main(void) {
 
 	for (int i = 0; i < 9; i++) {
 		for (int j = 0; j < 9; j++) {
-			cout << a[i][j] << ' ';
+			cout << arr[i][j] << ' ';
 		}
 		cout << '\n';
 	}
