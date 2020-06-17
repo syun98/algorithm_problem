@@ -3,7 +3,7 @@ using namespace std;
 
 int arr[9][9] = {};
 
-void sdoku(int i,int j) {
+int sdoku(int i,int j) {
 	int used[9] = { 0, };
 	int cnt_i = 0, cnt_j = 0;
 
@@ -18,18 +18,29 @@ void sdoku(int i,int j) {
 }
 
 int main(void) {
+	int res_cnt = 81;
 	for (int i = 0; i < 9; i++) {
 		for (int j = 0; j < 9; j++) {
 			cin >> arr[i][j];
 		}
 	}
 
+again:;
+
 	for (int i = 0; i < 9; i++) {
 		for (int j = 0; j < 9; j++) {
 			if (arr[i][j] == 0)
-				sdoku(i, j);
+				if (sdoku(i, j))
+					cnt--;
+				else
+					;
+			else
+				cnt--;
 		}
 	}
+
+	if (res_cnt)
+		goto again;
 	cout << endl;	//»ı·«
 
 	for (int i = 0; i < 9; i++) {
