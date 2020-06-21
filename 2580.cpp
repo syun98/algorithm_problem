@@ -3,18 +3,8 @@ using namespace std;
 
 int arr[9][9] = {};
 
-int sdoku(int i,int j) {
-	int used[9] = { 0, };
-	int cnt_i = 0, cnt_j = 0;
+void sdoku(int i, int j) {
 
-	for (int k; k < 9; k++) {
-		if (arr[i][k]) {
-			cnt_i++;
-			used[arr[i][k]]++;
-		}
-		if (arr[k][j])
-			cnt_j++;
-	}
 }
 
 int main(void) {
@@ -30,12 +20,7 @@ again:;
 	for (int i = 0; i < 9; i++) {
 		for (int j = 0; j < 9; j++) {
 			if (arr[i][j] == 0)
-				if (sdoku(i, j))
-					res_cnt--;
-				else
-					;
-			else
-				res_cnt--;
+				sdoku(i, j);
 		}
 	}
 
