@@ -76,6 +76,10 @@ void sdoku(int i, int j) {
 }
 
 int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+	cout.tie(0);
+
 	for (int i = 0; i < 9; i++) {
 		for (int j = 0; j < 9; j++) {
 			cin >> arr[i][j];
