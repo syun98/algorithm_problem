@@ -3,6 +3,14 @@ using namespace std;
 
 int n;
 int arr[20][20] = {};
+int res = 101;
+
+void dfs(int i, int j) {
+	int temp;
+	temp = arr[i][j] + arr[j][i];
+
+	res = (res < temp) ? res : temp;
+}
 
 int main() {
 	cin >> n;
@@ -12,4 +20,12 @@ int main() {
 			cin >> arr[i][j];
 		}
 	}
+
+	for (int i = 0; i < n; i++) {
+		for (int j = i + 1; j < n; j++) {
+			dfs(i, j);
+		}
+	}
+
+	cout << res << endl;
 }
