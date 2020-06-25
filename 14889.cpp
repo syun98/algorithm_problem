@@ -7,9 +7,7 @@ int res = 101;
 
 void dfs(int i, int j) {
 	int temp;
-	temp = arr[i][j] + arr[j][i];
-
-	res = (res < temp) ? res : temp;
+	
 }
 
 int main() {
