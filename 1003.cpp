@@ -16,13 +16,12 @@ void fibonacci(int n) {
 
 int main() {
 	int t;
-	cin >> t;
+	scanf("%d", &t);
 	for (int i = 0; i < t; i++) {
 		int n;
-		cin >> n;
-
+		scanf("%d", &n);
 		fibonacci(n);
-		cout << cnt[0] << " " << cnt[1] << endl;
+		printf("%d %d\n", cnt[0], cnt[1]);
 		cnt[0] = cnt[1] = 0;
 	}
 }
