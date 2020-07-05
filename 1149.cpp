@@ -2,6 +2,7 @@
 using namespace std;
 
 int arr[1000][3] = { 0, };
+bool chk[1000][3];
 
 void Solve(int n) {
 	int result = -1;
