@@ -1,3 +1,4 @@
+//blog : https://codesyun.tistory.com/4
 #include <stdio.h>
 
 int main() {
