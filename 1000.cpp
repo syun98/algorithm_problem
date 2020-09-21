@@ -1,3 +1,4 @@
+//blog : https://codesyun.tistory.com/7
 #include <iostream>
 using namespace std;
 
