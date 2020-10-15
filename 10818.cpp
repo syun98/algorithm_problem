@@ -1,19 +1,18 @@
+//blog : https://codesyun.tistory.com/33
 #include <iostream>
-
+#include <algorithm>
 using namespace std;
 
 int main() {
-	int n = 0;
-	int num;
-	int max = -1000000, min = 1000000;
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
 
+	int n;
 	cin >> n;
-
-	for (int i = 0; i < n; i++) {
-		cin >> num;
-		max = max < num ? num : max;
-		min = min > num ? num : min;
-	}
-
-	cout << min << " " << max << endl;
+	int arr[1000000] = {};
+	for (int i = 0; i < n; i++)
+		cin >> arr[i];
+	sort(arr, arr + n);
+	cout << arr[0] << " " << arr[n - 1] << '\n';
 }
