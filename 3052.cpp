@@ -1,3 +1,4 @@
+//blog : https://codesyun.tistory.com/36
 #include <iostream>
 using namespace std;
 
@@ -16,5 +17,4 @@ int main() {
 			count++;
 	}
 	cout << count << endl;
-
 }
