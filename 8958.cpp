@@ -1,3 +1,4 @@
+//blog : https://codesyun.tistory.com/38
 #include <iostream>
 #include <string>
 using namespace std;
@@ -7,7 +8,7 @@ int main() {
 	string str;
 	int count = 0;
 	int result = 0;
-	
+
 	cin >> n;
 	for (int i = 0; i < n; i++) {
 		cin >> str;
@@ -31,7 +32,6 @@ int main() {
 			else {
 				count = 0;
 			}
-
 		}
 		cout << result << endl;
 		result = 0;
