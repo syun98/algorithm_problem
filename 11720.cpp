@@ -1,3 +1,4 @@
+//blog : https://codesyun.tistory.com/46
 #include <cstdio>
 
 int main() {
@@ -9,7 +10,7 @@ int main() {
 		scanf("%1d", &num[i]);
 	}
 
-	for(int i=0;i<N;i++){
+	for (int i = 0; i < N; i++) {
 		result += num[i];
 	}
 	printf("%d\n", result);
