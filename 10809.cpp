@@ -1,3 +1,4 @@
+//blog : https://codesyun.tistory.com/47
 #include <cstdio>
 #include <string>
 #include <iostream>
