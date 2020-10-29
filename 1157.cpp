@@ -1,3 +1,4 @@
+//blog : https://codesyun.tistory.com/49
 #include <cstdio>
 #include <string>
 #include <iostream>
@@ -17,7 +18,7 @@ int main() {
 			}
 		}
 	}
-	
+
 	for (int i = 'a'; i <= 'z'; i++) {
 		for (int j = 0; j < len; j++) {
 			if (str.at(j) == i) {
@@ -37,7 +38,7 @@ int main() {
 		if (max == alpha[i - 65])
 			multialpha++;
 	}
-		
+
 
 	if (multialpha == 1)
 		printf("%c\n", maxalpha);
