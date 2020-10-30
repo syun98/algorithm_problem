@@ -1,3 +1,4 @@
+//blog : https://codesyun.tistory.com/50
 #include <stdio.h>
 #include <iostream>
 #include <string>
@@ -12,10 +13,10 @@ int main() {
 			num++;
 	}
 
-	if (str[0] == ' ') 
+	if (str[0] == ' ')
 		num--;
-	if (str[str.length() - 1] == ' ') 
+	if (str[str.length() - 1] == ' ')
 		num--;
-	
+
 	printf("%d", num);
 }
