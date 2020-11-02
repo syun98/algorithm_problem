@@ -1,3 +1,4 @@
+//blog : https://codesyun.tistory.com/54
 #include <stdio.h>
 #include <iostream>
 #include <string>
@@ -5,7 +6,7 @@ using namespace std;
 
 int main() {
 	int n;
-	scanf("%d", &n);
+	scanf_s("%d", &n);
 	string str;
 
 	int cnt = n;
@@ -19,7 +20,7 @@ int main() {
 						goto STOPCNT;
 					}
 				}
-			}		
+			}
 		}
 	STOPCNT:;
 	}
