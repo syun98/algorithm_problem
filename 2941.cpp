@@ -1,3 +1,4 @@
+//blog : https://codesyun.tistory.com/53
 #include <stdio.h>
 #include <iostream>
 #include <string>
@@ -9,38 +10,24 @@ int main() {
 	cin >> str;
 	int num = 0;
 
-	int i = 0;
-	while (i < str.length()) {
-		if (str[i] == 'c') {
-			if (str[i + 1] == '=')
-				i++;
-			else if (str[i + 1] == '-')
-				i++;
-		}
-		else if (str[i] == 'd') {
-			if (str[i + 1] == '-')
-				i++;
-			else if (str[i + 1] == 'z'&&str[i + 2] == '=')
-				i += 2;
-		}
-		else if (str[i] == 'l') {
-			if (str[i + 1] == 'j') 
-				i++;
-		}
-		else if (str[i] == 'n') {
-			if (str[i + 1] == 'j')
-				i++;
-		}
-		else if (str[i] == 's') {
-			if (str[i + 1] == '=') 
-				i++;
-		}
-		else if (str[i] == 'z') {
-			if (str[i + 1] == '=')
-				i++;
-		}
-		num++;
-		i++;
+	for (int i = 0; i < str.length(); i++) {
+		if (str.at(i) >= 'A'&&str.at(i) <= 'C')
+			num += 3;
+		else if (str.at(i) >= 'D'&&str.at(i) <= 'F')
+			num += 4;
+		else if (str.at(i) >= 'G'&&str.at(i) <= 'I')
+			num += 5;
+		else if (str.at(i) >= 'J'&&str.at(i) <= 'L')
+			num += 6;
+		else if (str.at(i) >= 'M'&&str.at(i) <= 'O')
+			num += 7;
+		else if (str.at(i) >= 'P'&&str.at(i) <= 'S')
+			num += 8;
+		else if (str.at(i) >= 'T'&&str.at(i) <= 'V')
+			num += 9;
+		else if (str.at(i) >= 'W'&&str.at(i) <= 'Z')
+			num += 10;
 	}
-	printf("%d\n", num);
+
+	printf("%d", num);
 }
