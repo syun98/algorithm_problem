@@ -1,19 +1,24 @@
+//blog : https://codesyun.tistory.com/56
 #include <iostream>
-#include <string>
 using namespace std;
 
 int main() {
-	int n;
-	int result = -1;
-	
-	cin >> n;
+	int N;
+	int div_five, div_three;	//5, 3으로 배달한 횟수를 저장할 변수
+	cin >> N;
 
-	for (int i = 0; i <= n / 5; i++){
-		if ((n - 5 * (n / 5 - i)) % 3 == 0) {
-			result = n / 5 - i + (n - 5 * (n / 5 - i)) / 3;
+	div_five = N / 5;
+	while (1) {
+		if (div_five < 0) {
+			cout << -1 << endl;
+			return 0;
+		}
+		if ((N - (5 * div_five)) % 3 == 0) {
+			div_three = (N - (5 * div_five)) / 3;
 			break;
 		}
+		div_five--;
 	}
-	cout << result << endl;
-
+	cout << div_five + div_three << endl;
+	return 0;
 }
