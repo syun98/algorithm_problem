@@ -1,19 +1,20 @@
+//blog : https://codesyun.tistory.com/57
 #include <iostream>
-#include <string>
 using namespace std;
 
 int main() {
-	int n;
-	int range = 2;
-	int count = 1;
-	
-	cin >> n;
+	int N;
+	int end_of_hex = 1, cnt = 6;
+	int result = 1;
+	cin >> N;
 
 	while (1) {
-		if (n < range)
-			break;
-		range += 6*count;
-		count++;
+		if (end_of_hex >= N) {
+			cout << result << endl;
+			return 0;
+		}
+		end_of_hex += cnt;
+		cnt += 6;
+		result++;
 	}
-	cout << count << endl;
 }
