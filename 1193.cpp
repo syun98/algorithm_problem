@@ -1,18 +1,19 @@
+//blog : https://codesyun.tistory.com/58
 #include <iostream>
 using namespace std;
 
 int main() {
-	int n;
-	cin >> n;
+	int N;
+	cin >> N;
 
 	int i = 1;
-	while (n > i) {
-		n -= i;
+	while (N > i) {
+		N -= i;
 		i++;
 	}
 
 	if (i % 2 == 1)
-		cout << i + 1 - n << '/' << n << endl;
+		cout << i + 1 - N << '/' << N << endl;
 	else
-		cout << n << '/' << i + 1 - n << endl;
+		cout << N << '/' << i + 1 - N << endl;
 }
