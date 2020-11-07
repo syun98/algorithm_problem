@@ -1,5 +1,5 @@
+//blog : https://codesyun.tistory.com/59
 #include <iostream>
-
 using namespace std;
 
 int main() {
