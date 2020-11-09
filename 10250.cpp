@@ -1,3 +1,4 @@
+//blog : https://codesyun.tistory.com/60
 #include <iostream>
 using namespace std;
 
@@ -16,7 +17,6 @@ int main() {
 		else {
 			result = (n%h) * 100 + (n / h) + 1;
 		}
-
 		cout << result << endl;
 	}
 }
