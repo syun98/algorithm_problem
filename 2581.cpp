@@ -1,33 +1,27 @@
+//blog : https://codesyun.tistory.com/64
 #include <iostream>
 using namespace std;
 
 int main() {
-	int m, n;
-	int sum = 0;
-	int min = -1;
-	int temp = 0;
+	int M, N;
+	int sum = 0, min = -1;
+	int cnt = 0;
+	cin >> M >> N;
 
-	cin >> m >> n;
-
-	for (int i = m; i <= n; i++) {
-
-		for (int j = 1; j <= i; j++) {
-			if (i % j == 0)
-				temp++;
+	for (int i = M; i <= N; i++) {
+		for (int div = 1; div <= i; div++) {
+			if (i%div == 0)
+				cnt++;
 		}
-
-		if (temp == 2) {
-			sum += i;
-			if (min == -1) {
+		if (cnt == 2) {		//i가 소수일 때
+			if (min == -1)		//저장된 소수의 최솟값이 없을 때
 				min = i;
-			}
+			sum += i;
 		}
-
-		temp = 0;
+		cnt = 0;
 	}
-
 	if (min == -1)
-		cout << "-1" << endl;
+		cout << -1 << '\n';
 	else
-		cout << sum << endl << min << endl;
+		cout << sum << '\n' << min << '\n';
 }
