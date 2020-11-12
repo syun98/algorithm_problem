@@ -1,24 +1,20 @@
+// blog : https://codesyun.tistory.com/63
 #include <iostream>
 using namespace std;
 
 int main() {
-	int n;
-	int num[100];
-	int cnt = 0;
-	int temp = 0;
-
-	cin >> n;
-
-	for (int i = 0; i < n; i++) {
-		cin >> num[i];
-		for (int j = 1; j <= num[i]; j++) {
-			if (num[i] % j == 0)
-				temp++;
+	int N, result = 0;
+	int temp, cnt = 0;
+	cin >> N;
+	for (int i = 0; i < N; i++) {
+		cin >> temp;
+		for (int div = 1; div <= temp; div++) {
+			if (temp%div == 0)
+				cnt++;
 		}
-
-		if (temp == 2)
-			cnt++;
-		temp = 0;
+		if (cnt == 2)	//temp가 소수
+			result++;
+		cnt = 0;
 	}
-	cout << cnt << endl;
+	cout << result << '\n';
 }
