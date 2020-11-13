@@ -1,41 +1,27 @@
+//blog : https://codesyun.tistory.com/65
 #include <iostream>
 #include <cmath>
-#include <cstdio>
 using namespace std;
 
 int main() {
-	int m, n;
-	scanf_s("%d %d", &m, &n);
+	int M, N;
+	int rt;
+	cin >> M >> N;
 
-	bool * arr = new bool[n + 1];
-
-	for (int i = 0; i < n + 1; i++) {
-		arr[i] = true;
-	}
-
-	int j;
-
-	for (int i = 2; i < n + 1; i++) {
-		if (arr[i]) {
-			if ((unsigned int)pow(i, 2) > 1000001) {
-				break;
-			}
-			else {
-				for (j = (int)pow(i, 2); j < n + 1;) {
-					arr[j] = false;
-					j += i;
+	for (int i = M; i <= N; i++) {
+		rt = sqrt(i);
+		if (rt == 1 && i != 1) {	//2,3인 경우
+			cout << i << '\n';
+			continue;
+		}
+		if (i % 2) {	//홀수일 경우
+			for (int j = 2; j <= rt; j++) {
+				if (!(i%j))
+					break;
+				if (j == rt) {
+					cout << i << '\n';
 				}
 			}
 		}
 	}
-
-	if (m == 1)
-		m++;
-
-	for (int i = m; i < n + 1; i++) {
-		if (arr[i] && i >= m)
-			printf("%d\n", i);
-	}
-
-	delete[]arr;
 }
