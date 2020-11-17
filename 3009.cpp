@@ -1,27 +1,22 @@
+//blog : https://codesyun.tistory.com/69
 #include <iostream>
 using namespace std;
 
 int main() {
-	int square[2][3];
-	int result[2];
+	int x1, y1, x2, y2, x3, y3, rx, ry;
+	cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3;
 
-	for (int i = 0; i < 3; i++) {
-		cin >> square[0][i] >> square[1][i];
-	}
+	rx = x1;
+	ry = y1;
+	if (rx == x2)
+		rx = x3;
+	else if (rx == x3)
+		rx = x2;
+	
+	if (ry == y2)
+		ry = y3;
+	else if (ry == y3)
+		ry = y2;
 
-	if (square[0][0] == square[0][1])
-		result[0] = square[0][2];
-	else if (square[0][1] == square[0][2])
-		result[0] = square[0][0];
-	else
-		result[0] = square[0][1];
-
-	if (square[1][0] == square[1][1])
-		result[1] = square[1][2];
-	else if (square[1][1] == square[1][2])
-		result[1] = square[1][0];
-	else
-		result[1] = square[1][1];
-
-	cout << result[0] << " " << result[1] << endl;
+	cout << rx << " " << ry << "\n";
 }
