@@ -1,3 +1,4 @@
+//blog : https://codesyun.tistory.com/71
 #include <iostream>
 #define PI 3.1415926535897932
 using namespace std;
@@ -8,7 +9,5 @@ int main() {
 
 	cout << fixed;
 	cout.precision(6);
-
-	cout << r * r*PI << endl;
-	cout << r * r * 2 << endl;
+	cout << r * r*PI << "\n" << 2 * r*r << "\n";
 }
