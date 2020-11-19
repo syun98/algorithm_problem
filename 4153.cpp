@@ -1,20 +1,29 @@
+//blog : https://codesyun.tistory.com/70
 #include <iostream>
-#include <algorithm>
 using namespace std;
 
 int main() {
-	int a[3];
-	
 	while (1) {
-		cin >> a[0] >> a[1] >> a[2];
+		int x, y, z;
+		int temp = 0;
+		cin >> x >> y >> z;
+		if (x == 0 && y == 0 && z == 0)
+			return 0;
 
-		if (a[0] == 0 && a[1] == 0 && a[2] == 0)
-			break;
+		if (x > y) {
+			temp = y;
+			y = x;
+			x = temp;
+		}
+		if (y > z) {
+			temp = z;
+			z = y;
+			y = temp;
+		}
 
-		sort(a, a + 3);
-		if (a[2] * a[2] == (a[0] * a[0]) + (a[1] * a[1]))
-			cout << "right" << endl;
+		if (z*z == x * x + y * y)
+			cout << "right\n";
 		else
-			cout << "wrong" << endl;
+			cout << "wrong\n";
 	}
 }
