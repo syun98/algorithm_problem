@@ -1,13 +1,16 @@
+//blog : https://codesyun.tistory.com/73
 #include <iostream>
 using namespace std;
 
+int facto(int n) {
+	if (n <= 1)
+		return 1;
+	else
+		return n * facto(n - 1);
+}
+
 int main() {
 	int n;
-	int result = 1;
 	cin >> n;
-
-	for (int i = 1; i <= n; i++) {
-		result *= i;
-	}
-	cout << result << endl;
+	cout << facto(n) << '\n';
 }
