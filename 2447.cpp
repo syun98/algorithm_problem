@@ -1,33 +1,26 @@
-#include <cstdio>
+//blog : https://codesyun.tistory.com/75
+#include <iostream>
+using namespace std;
 
-const int N = 2187;
-const int M = 1093;
-
-int n;
-bool star[N][N];
-
-
-void f(int n, int x, int y) {
-	if (n == 1) {
-		star[x][y] = true;
-		return;
+void star(int i, int j, int n) {
+	if (i / n % 3 == 1 && j / n % 3 == 1) {
+		cout << " ";
 	}
-	for (int i = 0; i<3; i++) {
-		for (int j = 0; j<3; j++) {
-			if (i == 1 && j == 1) continue;
-			f(n / 3, x + (n / 3)*i, y + (n / 3)*j);
-		}
+	else if (n / 3 == 0) {
+		cout << "*";
+	}
+	else {
+		star(i, j, n / 3);
 	}
 }
 
 int main() {
-	scanf("%d", &n);
-	f(n, 0, M - n / 2);
-	for (int i = 0; i<n; i++) {
-		for (int j = M - n / 2; j <= M + n / 2; j++) {
-			printf("%c", star[i][j] ? '*' : ' ');
+	int n;
+	cin >> n;
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			star(i, j, n);
 		}
-		puts("");
+		cout << '\n';
 	}
-	return 0;
 }
