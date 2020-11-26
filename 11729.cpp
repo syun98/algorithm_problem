@@ -1,35 +1,26 @@
-#include <cstdio>
-int num;
+//blog : https://codesyun.tistory.com/76
+#include <iostream>
+#include <cmath>
+using namespace std;
 
-void hanoi_count(int a, int b, int c, int N) {
-	if (N == 1) {
-		num++;
+void hanoi(int start, int mid, int end, int n) {
+	if (n == 1) {
+		cout << start << " " << end<< "\n";
 	}
-	else if (N > 1) {
-		hanoi_count(a, c, b, N - 1);
-		num++;
-		hanoi_count(b, a, c, N - 1);
+	else {
+		hanoi(start, end, mid, n - 1);
+		cout << start << " " << end << "\n";
+		hanoi(mid, start, end, n - 1);
 	}
-
-}
-
-void hanoi(int a, int b, int c, int N) {
-	if (N == 1) {
-		printf("%d %d\n", a, c);
-	}
-	else if (N > 1) {
-		hanoi(a, c, b, N - 1);
-		printf("%d %d\n", a, c);
-		hanoi(b, a, c, N - 1);
-	}
-	
 }
 
 int main() {
-	int N;
-	scanf("%d", &N);
-	num = 0;
-	hanoi_count(1, 2, 3, N);
-	printf("%d\n", num);
-	hanoi(1, 2, 3, N);
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+
+	int n;
+	cin >> n;
+	cout << (int)pow(2, n) - 1 << '\n';
+	hanoi(1, 2, 3, n);
 }
