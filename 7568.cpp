@@ -1,24 +1,30 @@
+//blog : https://codesyun.tistory.com/82
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+
 	int n;
-	int x[50] = {};
-	int y[50] = {};
-	int rank[50] = {};
-	
+	int arr[51][2] = {};
+	int result[51];
 	cin >> n;
-	for (int i = 0; i < n; i++)
-		cin >> x[i] >> y[i];
+	for (int i = 0; i < n; i++) {
+		cin >> arr[i][0] >> arr[i][1];
+		result[i] = 1;		//결과 배열 초기화
+	}
 
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++) {
-			if (x[i] < x[j] && y[i] < y[j]) {
-				rank[i]++;
-			}
+			if (arr[i][0] < arr[j][0] && arr[i][1] < arr[j][1])
+				result[i]++;
 		}
 	}
 
 	for (int i = 0; i < n; i++)
-		cout << ++rank[i] << " ";
+		cout << result[i] << " ";
+	cout << '\n';
 }
