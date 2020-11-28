@@ -1,21 +1,27 @@
+//blog : https://codesyun.tistory.com/81
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int main() {
-	int n;
-	int temp = 0;
-	int res = 0;
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+
+	int n, result = 10000001;
+	int generate;
 	cin >> n;
 
-	for (int i = 1; i < n; i++) {
-		temp = i;
-		temp += i / 1000000 + i % 1000000 / 100000
-			+ i % 100000 / 10000 + i % 10000 / 1000
-			+ i % 1000 / 100 + i % 100 / 10 + i % 10;
-		if (temp == n) {
-			res = i;
-			break;
+	for (int i = 1; i <= n; i++) {
+		generate = i + (i % 10);
+		for (int j = 1; j <= log10(i); j++) {
+			generate += (i % (int)pow(10, j + 1)) / pow(10, j);
 		}
+		if (generate == n && i < result)
+			result = i;
 	}
-	cout << res << endl;
+	if (result > 1000000)
+		cout << 0 << '\n';
+	else
+		cout << result << '\n';
 }
