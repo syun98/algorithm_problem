@@ -1,14 +1,6 @@
 #include <iostream>
 using namespace std;
 
-void Hansu(int n);
-
-int main() {
-	int n;
-	cin >> n;
-	Hansu(n);
-}
-
 void Hansu(int n) {
 	int cnt = n;
 
@@ -25,4 +17,10 @@ void Hansu(int n) {
 		}
 	}
 	cout << cnt << endl;
+}
+
+int main() {
+	int n;
+	cin >> n;
+	Hansu(n);
 }
